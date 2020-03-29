@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F269738242F68F000A261C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F269737242F68F000A261C7 /* GoogleService-Info.plist */; };
+		2F26973F242F71C500A261C7 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26973E242F71C500A261C7 /* WelcomeView.swift */; };
+		2F269741242F793300A261C7 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F269740242F793300A261C7 /* SessionStore.swift */; };
+		2F269743242F989900A261C7 /* SendPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F269742242F989900A261C7 /* SendPost.swift */; };
+		2F269747242FF54C00A261C7 /* FBLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F269746242FF54C00A261C7 /* FBLogin.swift */; };
+		2F26974924301DB700A261C7 /* TWLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26974824301DB700A261C7 /* TWLogin.swift */; };
 		2F5C3DD724250840001A3293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3DD624250840001A3293 /* AppDelegate.swift */; };
 		2F5C3DD924250840001A3293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3DD824250840001A3293 /* SceneDelegate.swift */; };
 		2F5C3DDC24250840001A3293 /* Korona__EvdeKal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3DDA24250840001A3293 /* Korona__EvdeKal.xcdatamodeld */; };
@@ -60,12 +66,18 @@
 		2FDA45B5242D3CC100FA314A /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA45B4242D3CC100FA314A /* LinkList.swift */; };
 		2FDA45B7242D3DF600FA314A /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA45B6242D3DF600FA314A /* CourseList.swift */; };
 		2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA45B8242D3F4C00FA314A /* SporList.swift */; };
-		2FDA45BB242D558B00FA314A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA45BA242D558B00FA314A /* GoogleService-Info.plist */; };
-		8F5D5EFFB5539BA714998BB6 /* Pods_Korona__EvdeKal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19F0CB9F72C413DC87BBAAA /* Pods_Korona__EvdeKal.framework */; };
+		683BFBE1D04E12C2953D5056 /* Pods_Evde_Kal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2F1FC7CA2E7D28ED3E2C04 /* Pods_Evde_Kal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F5C3DD324250840001A3293 /* #EvdeKal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#EvdeKal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evde Kal.release.xcconfig"; path = "Target Support Files/Pods-Evde Kal/Pods-Evde Kal.release.xcconfig"; sourceTree = "<group>"; };
+		2F269737242F68F000A261C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F26973E242F71C500A261C7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		2F269740242F793300A261C7 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		2F269742242F989900A261C7 /* SendPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPost.swift; sourceTree = "<group>"; };
+		2F269746242FF54C00A261C7 /* FBLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLogin.swift; sourceTree = "<group>"; };
+		2F26974824301DB700A261C7 /* TWLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWLogin.swift; sourceTree = "<group>"; };
+		2F5C3DD324250840001A3293 /* Evde Kal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evde Kal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5C3DD624250840001A3293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F5C3DD824250840001A3293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2F5C3DDB24250840001A3293 /* Korona__EvdeKal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Korona__EvdeKal.xcdatamodel; sourceTree = "<group>"; };
@@ -120,10 +132,10 @@
 		2FDA45B4242D3CC100FA314A /* LinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
 		2FDA45B6242D3DF600FA314A /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		2FDA45B8242D3F4C00FA314A /* SporList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SporList.swift; sourceTree = "<group>"; };
-		2FDA45BA242D558B00FA314A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evde Kal.debug.xcconfig"; path = "Target Support Files/Pods-Evde Kal/Pods-Evde Kal.debug.xcconfig"; sourceTree = "<group>"; };
 		5BC53EB00DA63FEC6E8B5E8D /* Pods-Korona #EvdeKal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Korona #EvdeKal.release.xcconfig"; path = "Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal.release.xcconfig"; sourceTree = "<group>"; };
 		79AA64691A92B1226B890B64 /* Pods-Korona #EvdeKal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Korona #EvdeKal.debug.xcconfig"; path = "Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal.debug.xcconfig"; sourceTree = "<group>"; };
-		E19F0CB9F72C413DC87BBAAA /* Pods_Korona__EvdeKal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Korona__EvdeKal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2F1FC7CA2E7D28ED3E2C04 /* Pods_Evde_Kal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evde_Kal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5D5EFFB5539BA714998BB6 /* Pods_Korona__EvdeKal.framework in Frameworks */,
+				683BFBE1D04E12C2953D5056 /* Pods_Evde_Kal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +163,7 @@
 		2F5C3DD424250840001A3293 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F5C3DD324250840001A3293 /* #EvdeKal.app */,
+				2F5C3DD324250840001A3293 /* Evde Kal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,7 +184,7 @@
 				2F5C3DE424250846001A3293 /* LaunchScreen.storyboard */,
 				2F5C3DE724250846001A3293 /* Info.plist */,
 				2F5C3DDA24250840001A3293 /* Korona__EvdeKal.xcdatamodeld */,
-				2FDA45BA242D558B00FA314A /* GoogleService-Info.plist */,
+				2F269737242F68F000A261C7 /* GoogleService-Info.plist */,
 				2F5C3DE124250846001A3293 /* Preview Content */,
 			);
 			path = "Korona #EvdeKal";
@@ -193,6 +205,8 @@
 				2F5C3E0524251265001A3293 /* HealthView.swift */,
 				2FDA4581242CCB8100FA314A /* NewsDetail.swift */,
 				2FDA4583242CCC4A00FA314A /* ForumView.swift */,
+				2F26973E242F71C500A261C7 /* WelcomeView.swift */,
+				2F269742242F989900A261C7 /* SendPost.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				2F5C3E0D24251B2B001A3293 /* NewsVM.swift */,
+				2F269740242F793300A261C7 /* SessionStore.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -253,6 +268,8 @@
 				2FDA4578242CC9CD00FA314A /* NewsView.swift */,
 				2FDA457A242CC9E200FA314A /* YoutubePlayer.swift */,
 				2FDA457C242CC9F800FA314A /* CategorySegment.swift */,
+				2F269746242FF54C00A261C7 /* FBLogin.swift */,
+				2F26974824301DB700A261C7 /* TWLogin.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -295,6 +312,8 @@
 			children = (
 				79AA64691A92B1226B890B64 /* Pods-Korona #EvdeKal.debug.xcconfig */,
 				5BC53EB00DA63FEC6E8B5E8D /* Pods-Korona #EvdeKal.release.xcconfig */,
+				33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */,
+				14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -302,7 +321,7 @@
 		B333B5BC331B3ED9BB54A79B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E19F0CB9F72C413DC87BBAAA /* Pods_Korona__EvdeKal.framework */,
+				DF2F1FC7CA2E7D28ED3E2C04 /* Pods_Evde_Kal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,9 +329,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F5C3DD224250840001A3293 /* Korona #EvdeKal */ = {
+		2F5C3DD224250840001A3293 /* Evde Kal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F5C3DEA24250846001A3293 /* Build configuration list for PBXNativeTarget "Korona #EvdeKal" */;
+			buildConfigurationList = 2F5C3DEA24250846001A3293 /* Build configuration list for PBXNativeTarget "Evde Kal" */;
 			buildPhases = (
 				DA9BB0015C4C1F4ABE6287EC /* [CP] Check Pods Manifest.lock */,
 				2F5C3DCF24250840001A3293 /* Sources */,
@@ -324,9 +343,9 @@
 			);
 			dependencies = (
 			);
-			name = "Korona #EvdeKal";
+			name = "Evde Kal";
 			productName = "Korona #EvdeKal";
-			productReference = 2F5C3DD324250840001A3293 /* #EvdeKal.app */;
+			productReference = 2F5C3DD324250840001A3293 /* Evde Kal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -344,7 +363,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F5C3DCE24250840001A3293 /* Build configuration list for PBXProject "Korona #EvdeKal" */;
+			buildConfigurationList = 2F5C3DCE24250840001A3293 /* Build configuration list for PBXProject "Evde Kal" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -357,7 +376,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F5C3DD224250840001A3293 /* Korona #EvdeKal */,
+				2F5C3DD224250840001A3293 /* Evde Kal */,
 			);
 		};
 /* End PBXProject section */
@@ -368,7 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5C3DE624250846001A3293 /* LaunchScreen.storyboard in Resources */,
-				2FDA45BB242D558B00FA314A /* GoogleService-Info.plist in Resources */,
+				2F269738242F68F000A261C7 /* GoogleService-Info.plist in Resources */,
 				2F5C3DE324250846001A3293 /* Preview Assets.xcassets in Resources */,
 				2F5C3DE024250846001A3293 /* Assets.xcassets in Resources */,
 			);
@@ -392,7 +411,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Korona #EvdeKal-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Evde Kal-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,15 +424,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Evde Kal/Pods-Evde Kal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Evde Kal/Pods-Evde Kal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Evde Kal/Pods-Evde Kal-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -427,16 +446,19 @@
 				2FDA45A1242D07FC00FA314A /* Events.swift in Sources */,
 				2F5C3DF7242509FF001A3293 /* FirebaseData.swift in Sources */,
 				2FDA4597242D070400FA314A /* Sport.swift in Sources */,
+				2F26974924301DB700A261C7 /* TWLogin.swift in Sources */,
 				2F5C3E0624251265001A3293 /* HealthView.swift in Sources */,
 				2FDA459D242D07AD00FA314A /* Games.swift in Sources */,
 				2F5C3DD724250840001A3293 /* AppDelegate.swift in Sources */,
 				2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */,
 				2FDA4582242CCB8100FA314A /* NewsDetail.swift in Sources */,
 				2FDA456A242CC85800FA314A /* Covid.swift in Sources */,
+				2F26973F242F71C500A261C7 /* WelcomeView.swift in Sources */,
 				2FDA458A242CDCDA00FA314A /* FilmList.swift in Sources */,
 				2FDA4577242CC9B400FA314A /* StepbyStep.swift in Sources */,
 				2FDA4584242CCC4A00FA314A /* ForumView.swift in Sources */,
 				2F5C3E0C2425132A001A3293 /* CoronaNews.swift in Sources */,
+				2F269747242FF54C00A261C7 /* FBLogin.swift in Sources */,
 				2FDA4573242CC98500FA314A /* NewsHorizontal.swift in Sources */,
 				2FDA457B242CC9E200FA314A /* YoutubePlayer.swift in Sources */,
 				2F5C3DD924250840001A3293 /* SceneDelegate.swift in Sources */,
@@ -453,6 +475,7 @@
 				2F5C3E08242512A2001A3293 /* HTTPManager.swift in Sources */,
 				2FDA458C242CDD2500FA314A /* Films.swift in Sources */,
 				2F5C3E0A242512BF001A3293 /* API.swift in Sources */,
+				2F269741242F793300A261C7 /* SessionStore.swift in Sources */,
 				2FDA45B3242D380900FA314A /* EventList.swift in Sources */,
 				2FDA458E242CDD7900FA314A /* FirebaseFilms.swift in Sources */,
 				2FDA45A9242D097F00FA314A /* FirebaseLinks.swift in Sources */,
@@ -471,6 +494,7 @@
 				2F5C3E042425112B001A3293 /* EvdeKalView.swift in Sources */,
 				2FDA4580242CCA5800FA314A /* TextWithAttributedString.swift in Sources */,
 				2FDA4579242CC9CD00FA314A /* NewsView.swift in Sources */,
+				2F269743242F989900A261C7 /* SendPost.swift in Sources */,
 				2FDA456C242CC88B00FA314A /* FirebaseCovid.swift in Sources */,
 				2F5C3E0E24251B2B001A3293 /* NewsVM.swift in Sources */,
 			);
@@ -606,7 +630,7 @@
 		};
 		2F5C3DEB24250846001A3293 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79AA64691A92B1226B890B64 /* Pods-Korona #EvdeKal.debug.xcconfig */;
+			baseConfigurationReference = 33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -620,7 +644,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.labters.korona-evdekal";
-				PRODUCT_NAME = "#EvdeKal";
+				PRODUCT_NAME = "Evde Kal";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -628,7 +652,7 @@
 		};
 		2F5C3DEC24250846001A3293 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BC53EB00DA63FEC6E8B5E8D /* Pods-Korona #EvdeKal.release.xcconfig */;
+			baseConfigurationReference = 14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -642,7 +666,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.labters.korona-evdekal";
-				PRODUCT_NAME = "#EvdeKal";
+				PRODUCT_NAME = "Evde Kal";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -651,7 +675,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F5C3DCE24250840001A3293 /* Build configuration list for PBXProject "Korona #EvdeKal" */ = {
+		2F5C3DCE24250840001A3293 /* Build configuration list for PBXProject "Evde Kal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F5C3DE824250846001A3293 /* Debug */,
@@ -660,7 +684,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F5C3DEA24250846001A3293 /* Build configuration list for PBXNativeTarget "Korona #EvdeKal" */ = {
+		2F5C3DEA24250846001A3293 /* Build configuration list for PBXNativeTarget "Evde Kal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F5C3DEB24250846001A3293 /* Debug */,

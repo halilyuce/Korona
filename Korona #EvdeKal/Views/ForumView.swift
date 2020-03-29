@@ -10,6 +10,12 @@ import Foundation
 import SwiftUI
 
 struct ForumView: View {
+    @EnvironmentObject var session: SessionStore
+    @State var isLogin:Bool = false
+    
+    func getUser() {
+        session.listen()
+    }
     
     var body: some View {
         NavigationView {
@@ -21,10 +27,15 @@ struct ForumView: View {
             }
             .navigationBarTitle(Text("Forum"))
             .navigationBarItems(trailing:
-                Button(action: {
-                }, label: {
+                NavigationLink(destination:Group {
+                    if (self.session.session != nil){
+                        SendPost()
+                    }else {
+                        WelcomeView()
+                    }
+                }) {
                     Text("Konu Aç")
-                })
+                }.onAppear(perform: getUser)
             )
         }
     }
@@ -32,6 +43,6 @@ struct ForumView: View {
 
 struct ForumView_Previews: PreviewProvider {
     static var previews: some View {
-        ForumView()
+        ForumView().environmentObject(SessionStore())
     }
 }

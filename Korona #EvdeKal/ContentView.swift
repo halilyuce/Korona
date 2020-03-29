@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            ForumView()
+            ForumView().environmentObject(SessionStore())
                 .tabItem {
                     Image(systemName: "list.bullet.below.rectangle")
                     Text("Forum")

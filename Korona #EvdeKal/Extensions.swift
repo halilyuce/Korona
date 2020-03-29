@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Firebase
 
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
@@ -170,58 +171,49 @@ extension View {
     }
 }
 
-extension UIViewController {
-
-    /// Top most view controller in view hierarchy
-    var topMostViewController: UIViewController {
-
-        // No presented view controller? Current controller is the most view controller
-        guard let presentedViewController = self.presentedViewController else {
-            return self
+extension AuthErrorCode {
+    var description: String? {
+        switch self {
+        case .emailAlreadyInUse:
+            return "Üzgünüz, bu email adresi ile daha önce kayıt olunmuş"
+        case .userDisabled:
+            return "Üzgünüz, bu hesap engellenmiş olarak gözüküyor"
+        case .operationNotAllowed:
+            return "Erişim izni sağlanamadı"
+        case .invalidEmail:
+            return "Email adresiniz hatalı gözüküyor"
+        case .wrongPassword:
+            return "Şifreniz boş veya hatalı gözüküyor"
+        case .userNotFound:
+            return "Böyle bir hesap bulunamadı"
+        case .networkError:
+            return "Bir internet erişim problemi var gibi gözüküyor"
+        case .weakPassword:
+            return "Lütfen şifrenizi gözden geçirin"
+        case .missingEmail:
+            return "Email adresinizi girmeyi unutmuşsunuz gibi gözüküyor"
+        case .internalError:
+            return "Internal Hatası"
+        case .invalidCustomToken:
+            return "Token bilginiz hatalı gözüküyor"
+        case .tooManyRequests:
+            return "Üzgünüz, şuan çok fazla istek olduğunu gözlemledik"
+        default:
+            return nil
         }
+    }
+}
 
-        // Presenting a navigation controller?
-        // Top most view controller is in visible view controller hierarchy
-        if let navigation = presentedViewController as? UINavigationController {
-            if let visibleController = navigation.visibleViewController {
-                return visibleController.topMostViewController
-            } else {
-                return navigation.topMostViewController
+
+public extension Error {
+    var localizedDescription: String {
+        let error = self as NSError
+        if error.domain == AuthErrorDomain {
+            if let code = AuthErrorCode(rawValue: error.code) {
+                if let errorString = code.description {
+                    return errorString
+                }
             }
         }
-
-        // Presenting a tab bar controller?
-        // Top most view controller is in visible view controller hierarchy
-        if let tabBar = presentedViewController as? UITabBarController {
-            if let selectedTab = tabBar.selectedViewController {
-                return selectedTab.topMostViewController
-            } else {
-                return tabBar.topMostViewController
-            }
-        }
-
-        // Presenting another kind of view controller?
-        // Top most view controller is in visible view controller hierarchy
-        return presentedViewController.topMostViewController
-    }
-
-}
-
-extension UIWindow {
-
-    /// Top most view controller in view hierarchy
-    /// - Note: Wrapper to UIViewController.topMostViewController
-    var topMostViewController: UIViewController? {
-        return self.rootViewController?.topMostViewController
-    }
-
-}
-
-extension UIApplication {
-
-    /// Top most view controller in view hierarchy
-    /// - Note: Wrapper to UIWindow.topMostViewController
-    var topMostViewController: UIViewController? {
-        return self.keyWindow?.topMostViewController
-    }
-}
+        return error.localizedDescription
+    } }

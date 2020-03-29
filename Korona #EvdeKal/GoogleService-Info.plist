@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>172319743358-fq31e6gbqtap0ke2h5nchu4u360lqo0n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.172319743358-fq31e6gbqtap0ke2h5nchu4u360lqo0n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA9DVDeK8SwzmdZcR4Yaxkd6f2L9i6AJeU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>172319743358</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.labters.korona-evdekal</string>
+	<key>PROJECT_ID</key>
+	<string>korona-228bc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>korona-228bc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:172319743358:ios:70e2fe64943298dd33272f</string>
+	<key>DATABASE_URL</key>
+	<string>https://korona-228bc.firebaseio.com</string>
+</dict>
+</plist>
