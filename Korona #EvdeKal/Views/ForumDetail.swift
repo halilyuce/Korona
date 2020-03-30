@@ -10,9 +10,17 @@ import Firebase
 
 struct ForumDetail: View {
     @EnvironmentObject var session: SessionStore
-    var post = Post(id: "", title: "", content: "", user: "", comments: [], created_at: Timestamp(date: Date()))
+    var post = Post(dictionary:["id": "", "title": "", "content": "", "comments": [], "date": Timestamp(date:Date())])
+    private var db = Firestore.firestore()
+    
+    @State private var showingSuccess = false
+    @State private var showingError = false
     @State var comment:String = ""
     @State private var offsetValue: CGFloat = 0.0
+    
+    init(post: Post){
+        self.post = post
+    }
     
     var body: some View {
         VStack(spacing:0){
@@ -24,7 +32,7 @@ struct ForumDetail: View {
                     Text("@" + post.user)
                         .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
                     Spacer()
-                    Text(post.created_at.dateValue().timeAgoSinceDate())
+                    Text(post.date.dateValue().timeAgoSinceDate())
                         .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
                 }.padding(.horizontal, 20).padding(.vertical, 10)
             }
@@ -36,7 +44,7 @@ struct ForumDetail: View {
                     Text("\(post.comments.count) Yorum")
                         .fontWeight(.bold).foregroundColor(.gray).padding(.vertical,15).padding(.horizontal, 20)
                 }.background(Color(UIColor(named: "SecondaryColor")!))
-                ForEach(post.comments, id: \.body){ comment in
+                ForEach(post.comments, id: \.date){ comment in
                     VStack(spacing:20){
                         HStack(alignment: .top, spacing: 12){
                             ZStack{
@@ -51,10 +59,10 @@ struct ForumDetail: View {
                                     Text("@" + comment.user)
                                         .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
                                     Spacer()
-                                    Text(comment.created_at.dateValue().timeAgoSinceDate())
+                                    Text(comment.date.dateValue().timeAgoSinceDate())
                                         .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
                                 }
-                                Text(comment.body).fixedSize(horizontal: false, vertical: true)
+                                Text(comment.content).fixedSize(horizontal: false, vertical: true)
                             }
                         }.padding(.horizontal, 20).padding(.top, 8)
                         Divider()
@@ -64,8 +72,16 @@ struct ForumDetail: View {
         }.modifier(DismissingKeyboard())
             HStack(spacing:20){
                 MultilineTextField("Bir şeyler yaz...", text: $comment).padding(10)
-                Image(systemName: "paperplane").padding(10).offset(x: -10)
+                Button(action: sendComment) {
+                    Image(systemName: "paperplane").padding(10).offset(x: -10)
+                }
                 }.background(Color(UIColor(named: "SecondaryColor")!)).keyboardSensible($offsetValue)
+        }
+        .alert(isPresented: $showingSuccess) {
+            Alert(title: Text("Başarıyla Gönderildi"), message: Text("Yorumunuz başarıyla gönderildi."), dismissButton: .default(Text("Teşekkürler!")))
+        }
+        .alert(isPresented: $showingError) {
+            Alert(title: Text("Hata"), message: Text("Bir gata meydana geldi, lütfen tekrar deneyin."), primaryButton: .default(Text("Gerek yok!")), secondaryButton: .default(Text("Tekrar Dene"), action: sendComment))
         }
         .navigationBarTitle(Text("Konu Detayı"), displayMode: .inline)
         .navigationBarItems(trailing:
@@ -81,10 +97,23 @@ struct ForumDetail: View {
             }
         )
     }
+    
+    func sendComment(){
+            let addComment = ["body": self.comment, "user": (session.session?.email)!, "created_at": Timestamp(date: Date())] as Dictionary<String, Any>
+            db.collection("gonderiler").document(self.post.id).updateData([ "comments": FieldValue.arrayUnion([addComment]) ]){ err in
+                if let err = err {
+                    self.showingError = true
+                    print("Error writing city to Firestore: \(err)")
+                } else {
+                    print("Başarıyla eklendi")
+                    self.showingSuccess = true
+                }
+            }
+    }
 }
 
 struct ForumDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ForumDetail().environmentObject(SessionStore())
+        ForumDetail(post: Post(dictionary:["id": "", "title": "", "content": "", "comments": [], "date": Timestamp(date:Date())])).environmentObject(SessionStore())
     }
 }

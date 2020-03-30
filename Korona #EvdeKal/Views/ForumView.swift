@@ -21,13 +21,13 @@ struct ForumView: View {
     var body: some View {
         NavigationView {
             List(fbData.data, id: \.id){ post in
-                    NavigationLink(destination: ForumDetail(post:post)) {
+                NavigationLink(destination: ForumDetail(post: post)) {
                         VStack(alignment: .leading, spacing: 5){
                             HStack{
                                 Text("@" + post.user)
                                     .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
                                 Spacer()
-                                Text(post.created_at.dateValue().timeAgoSinceDate())
+                                Text(post.date.dateValue().timeAgoSinceDate())
                                     .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
                             }.padding(.bottom, 5)
                             Text(post.title).fontWeight(.semibold).padding(.bottom, 10)

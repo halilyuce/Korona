@@ -36,6 +36,14 @@ class FirebaseCovid: ObservableObject {
                     self.data.append(msgData)
                 }
                 
+                if (diff.type == .removed) {
+                    let docId = diff.document.documentID
+                    if let indexOfToRemove = self.data.firstIndex(where: { $0.id == docId} ) {
+                        self.data.remove(at: indexOfToRemove)
+                        print("removed: \(docId)")
+                    }
+                }
+                
                 // Real time modify from server
                 if (diff.type == .modified) {
                     self.data = self.data.map { (eachData) -> Covid in
