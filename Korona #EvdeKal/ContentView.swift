@@ -14,7 +14,7 @@ struct ContentView: View {
             ForumView().environmentObject(SessionStore())
                 .tabItem {
                     Image(systemName: "list.bullet.below.rectangle")
-                    Text("Forum")
+                    Text("Gönderiler")
                 }.tag(0)
             EvdeKalView()
                 .tabItem {

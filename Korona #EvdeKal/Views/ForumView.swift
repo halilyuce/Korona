@@ -12,6 +12,7 @@ import SwiftUI
 struct ForumView: View {
     @EnvironmentObject var session: SessionStore
     @State var isLogin:Bool = false
+    @ObservedObject var fbData = firebasePosts
     
     func getUser() {
         session.listen()
@@ -19,13 +20,22 @@ struct ForumView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 20){
-                    Text("Şuan için içerik bulunmamaktadır").padding()
-                    Spacer()
-                }
+            List(fbData.data, id: \.id){ post in
+                    NavigationLink(destination: ForumDetail(post:post)) {
+                        VStack(alignment: .leading, spacing: 5){
+                            HStack{
+                                Text("@" + post.user)
+                                    .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
+                                Spacer()
+                                Text(post.created_at.dateValue().timeAgoSinceDate())
+                                    .fontWeight(.light).foregroundColor(.gray).font(.system(size: 15))
+                            }.padding(.bottom, 5)
+                            Text(post.title).fontWeight(.semibold).padding(.bottom, 10)
+                            Divider()
+                        }
+                    }
             }
-            .navigationBarTitle(Text("Forum"))
+            .navigationBarTitle(Text("Başlıklar"))
             .navigationBarItems(trailing:
                 NavigationLink(destination:Group {
                     if (self.session.session != nil){

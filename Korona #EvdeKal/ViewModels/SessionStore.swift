@@ -52,6 +52,7 @@ class SessionStore: ObservableObject {
                 self.profile = UserProfile(uid: user.uid, email: user.email)
             } else {
                 self.session = nil
+                self.profile = nil
             }
         })
     }
@@ -75,6 +76,7 @@ class SessionStore: ObservableObject {
                 return
               }
               self.profile = profile
+              self.session = User(uid: user.uid, email: user.email)
               completion(profile, nil)
             }
         }
@@ -99,6 +101,7 @@ class SessionStore: ObservableObject {
               }
 
               self.profile = profile
+              self.session = User(uid: user.uid, email: user.email)
               completion(profile, nil)
             }
         }

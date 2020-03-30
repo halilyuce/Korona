@@ -36,9 +36,9 @@ struct WelcomeView: View {
             }
             VStack(spacing:14){
                 TextField("Email Adresiniz", text: $email).padding(12)
-                    .background(RoundedRectangle(cornerRadius: 4).stroke(Color.gray, lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 4).stroke(Color(UIColor.separator), lineWidth: 1))
                 SecureField("Şifreniz", text: $password).padding(12)
-                    .background(RoundedRectangle(cornerRadius: 4).stroke(Color.gray, lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 4).stroke(Color(UIColor.separator), lineWidth: 1))
             }.padding()
             Button(action: signIn) {
                 Text("Giriş Yap")
@@ -50,7 +50,6 @@ struct WelcomeView: View {
                 .cornerRadius(4)
                 .padding(.horizontal)
             FBLogin().frame(minWidth:0, maxWidth: .infinity).frame(height:50).padding(.horizontal)
-            TWLogin().frame(minWidth:0, maxWidth: .infinity).frame(height:50).padding(.horizontal)
             if (error != ""){
                 Text(error).font(.system(size: 14, weight:.semibold))
                     .foregroundColor(.red)
@@ -100,9 +99,9 @@ struct RegisterView: View {
                     }
                     VStack(spacing:14){
                         TextField("Email Adresiniz", text: $email).padding(12)
-                            .background(RoundedRectangle(cornerRadius: 4).stroke(Color.gray, lineWidth: 1))
+                            .background(RoundedRectangle(cornerRadius: 4).stroke(Color(UIColor.separator), lineWidth: 1))
                         SecureField("Şifreniz", text: $password).padding(12)
-                            .background(RoundedRectangle(cornerRadius: 4).stroke(Color.gray, lineWidth: 1))
+                            .background(RoundedRectangle(cornerRadius: 4).stroke(Color(UIColor.separator), lineWidth: 1))
                     }.padding()
                     Button(action: signUp) {
                         Text("Kayıt Ol")

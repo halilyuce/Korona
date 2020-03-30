@@ -42,7 +42,7 @@ class Coordinator: NSObject {
         provider.customParameters = [
              "lang": "tr"
              ]
-        provider.getCredentialWith(nil) { credential, error in
+        provider.getCredentialWith(_: nil) { credential, error in
           if error != nil {
             print((error?.localizedDescription)!)
           }

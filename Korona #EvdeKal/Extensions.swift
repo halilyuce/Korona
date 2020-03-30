@@ -46,31 +46,31 @@ extension Date {
         // Year
         if let interval = Calendar.current.dateComponents([.year], from: fromDate, to: toDate).year, interval > 0  {
 
-            return interval == 1 ? "\(interval)" + " " + "yıl önce" : "\(interval)" + " " + "yıl önce"
+            return interval == 1 ? "\(interval)" + " " + "yıl" : "\(interval)" + " " + "yıl"
         }
 
         // Month
         if let interval = Calendar.current.dateComponents([.month], from: fromDate, to: toDate).month, interval > 0  {
 
-            return interval == 1 ? "\(interval)" + " " + "ay önce" : "\(interval)" + " " + "ay önce"
+            return interval == 1 ? "\(interval)" + " " + "ay" : "\(interval)" + " " + "ay"
         }
 
         // Day
         if let interval = Calendar.current.dateComponents([.day], from: fromDate, to: toDate).day, interval > 0  {
 
-            return interval == 1 ? "\(interval)" + " " + "gün önce" : "\(interval)" + " " + "gün önce"
+            return interval == 1 ? "\(interval)" + " " + "gün" : "\(interval)" + " " + "gün"
         }
 
         // Hours
         if let interval = Calendar.current.dateComponents([.hour], from: fromDate, to: toDate).hour, interval > 0 {
 
-            return interval == 1 ? "\(interval)" + " " + "saat önce" : "\(interval)" + " " + "saat önce"
+            return interval == 1 ? "\(interval)" + " " + "sa" : "\(interval)" + " " + "sa"
         }
 
         // Minute
         if let interval = Calendar.current.dateComponents([.minute], from: fromDate, to: toDate).minute, interval > 0 {
 
-            return interval == 1 ? "\(interval)" + " " + "dakika önce" : "\(interval)" + " " + "dakika önce"
+            return interval == 1 ? "\(interval)" + " " + "dk" : "\(interval)" + " " + "dk"
         }
 
         return "Az önce"
@@ -217,3 +217,9 @@ public extension Error {
         }
         return error.localizedDescription
     } }
+
+extension UIColor {
+    static func random(from colors: [UIColor]) -> UIColor? {
+        return colors.randomElement()
+    }
+}

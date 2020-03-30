@@ -28,6 +28,12 @@
 		2F5C3E0C2425132A001A3293 /* CoronaNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E0B2425132A001A3293 /* CoronaNews.swift */; };
 		2F5C3E0E24251B2B001A3293 /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E0D24251B2B001A3293 /* NewsVM.swift */; };
 		2F5C3E16242580A0001A3293 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E15242580A0001A3293 /* CategoryList.swift */; };
+		2FB3CFE12430C0E7005D75BC /* MultiLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */; };
+		2FB3CFE32430C875005D75BC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE22430C875005D75BC /* Post.swift */; };
+		2FB3CFE52430C9BE005D75BC /* FirebasePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE42430C9BE005D75BC /* FirebasePosts.swift */; };
+		2FB3CFE72430F5DE005D75BC /* ForumDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE62430F5DE005D75BC /* ForumDetail.swift */; };
+		2FB3CFE9243121C7005D75BC /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE8243121C7005D75BC /* Comments.swift */; };
+		2FB3CFEB24315BA7005D75BC /* KeyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFEA24315BA7005D75BC /* KeyboardResponsive.swift */; };
 		2FDA4568242CC84200FA314A /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA4567242CC84200FA314A /* Health.swift */; };
 		2FDA456A242CC85800FA314A /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA4569242CC85800FA314A /* Covid.swift */; };
 		2FDA456C242CC88B00FA314A /* FirebaseCovid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA456B242CC88B00FA314A /* FirebaseCovid.swift */; };
@@ -94,6 +100,13 @@
 		2F5C3E0B2425132A001A3293 /* CoronaNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaNews.swift; sourceTree = "<group>"; };
 		2F5C3E0D24251B2B001A3293 /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		2F5C3E15242580A0001A3293 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		2FB3CFDF2430B14B005D75BC /* Evde Kal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Evde Kal.entitlements"; sourceTree = "<group>"; };
+		2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextField.swift; sourceTree = "<group>"; };
+		2FB3CFE22430C875005D75BC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2FB3CFE42430C9BE005D75BC /* FirebasePosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePosts.swift; sourceTree = "<group>"; };
+		2FB3CFE62430F5DE005D75BC /* ForumDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumDetail.swift; sourceTree = "<group>"; };
+		2FB3CFE8243121C7005D75BC /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		2FB3CFEA24315BA7005D75BC /* KeyboardResponsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponsive.swift; sourceTree = "<group>"; };
 		2FDA4567242CC84200FA314A /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		2FDA4569242CC85800FA314A /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		2FDA456B242CC88B00FA314A /* FirebaseCovid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCovid.swift; sourceTree = "<group>"; };
@@ -153,6 +166,7 @@
 		2F5C3DCA24250840001A3293 = {
 			isa = PBXGroup;
 			children = (
+				2FB3CFDF2430B14B005D75BC /* Evde Kal.entitlements */,
 				2F5C3DD524250840001A3293 /* Korona #EvdeKal */,
 				2F5C3DD424250840001A3293 /* Products */,
 				AAA6B7762B864B840261ED59 /* Pods */,
@@ -207,6 +221,7 @@
 				2FDA4583242CCC4A00FA314A /* ForumView.swift */,
 				2F26973E242F71C500A261C7 /* WelcomeView.swift */,
 				2F269742242F989900A261C7 /* SendPost.swift */,
+				2FB3CFE62430F5DE005D75BC /* ForumDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 				2FDA45A8242D097F00FA314A /* FirebaseLinks.swift */,
 				2FDA45AA242D09BD00FA314A /* FirebaseEvents.swift */,
 				2FDA45AC242D0A1D00FA314A /* FirebaseCourses.swift */,
+				2FB3CFE42430C9BE005D75BC /* FirebasePosts.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -253,6 +269,8 @@
 				2FDA459C242D07AD00FA314A /* Games.swift */,
 				2FDA459E242D07DB00FA314A /* Links.swift */,
 				2FDA45A0242D07FC00FA314A /* Events.swift */,
+				2FB3CFE22430C875005D75BC /* Post.swift */,
+				2FB3CFE8243121C7005D75BC /* Comments.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +306,8 @@
 			children = (
 				2FDA456D242CC8E000FA314A /* Extensions.swift */,
 				2FDA457F242CCA5800FA314A /* TextWithAttributedString.swift */,
+				2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */,
+				2FB3CFEA24315BA7005D75BC /* KeyboardResponsive.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -446,17 +466,20 @@
 				2FDA45A1242D07FC00FA314A /* Events.swift in Sources */,
 				2F5C3DF7242509FF001A3293 /* FirebaseData.swift in Sources */,
 				2FDA4597242D070400FA314A /* Sport.swift in Sources */,
+				2FB3CFE52430C9BE005D75BC /* FirebasePosts.swift in Sources */,
 				2F26974924301DB700A261C7 /* TWLogin.swift in Sources */,
 				2F5C3E0624251265001A3293 /* HealthView.swift in Sources */,
 				2FDA459D242D07AD00FA314A /* Games.swift in Sources */,
 				2F5C3DD724250840001A3293 /* AppDelegate.swift in Sources */,
 				2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */,
 				2FDA4582242CCB8100FA314A /* NewsDetail.swift in Sources */,
+				2FB3CFE9243121C7005D75BC /* Comments.swift in Sources */,
 				2FDA456A242CC85800FA314A /* Covid.swift in Sources */,
 				2F26973F242F71C500A261C7 /* WelcomeView.swift in Sources */,
 				2FDA458A242CDCDA00FA314A /* FilmList.swift in Sources */,
 				2FDA4577242CC9B400FA314A /* StepbyStep.swift in Sources */,
 				2FDA4584242CCC4A00FA314A /* ForumView.swift in Sources */,
+				2FB3CFE12430C0E7005D75BC /* MultiLineTextField.swift in Sources */,
 				2F5C3E0C2425132A001A3293 /* CoronaNews.swift in Sources */,
 				2F269747242FF54C00A261C7 /* FBLogin.swift in Sources */,
 				2FDA4573242CC98500FA314A /* NewsHorizontal.swift in Sources */,
@@ -464,6 +487,7 @@
 				2F5C3DD924250840001A3293 /* SceneDelegate.swift in Sources */,
 				2FDA4591242CF0D200FA314A /* BookList.swift in Sources */,
 				2FDA4595242CF13100FA314A /* FirebaseBooks.swift in Sources */,
+				2FB3CFE72430F5DE005D75BC /* ForumDetail.swift in Sources */,
 				2F5C3E16242580A0001A3293 /* CategoryList.swift in Sources */,
 				2FDA45B5242D3CC100FA314A /* LinkList.swift in Sources */,
 				2FDA459F242D07DB00FA314A /* Links.swift in Sources */,
@@ -491,10 +515,12 @@
 				2FDA45B7242D3DF600FA314A /* CourseList.swift in Sources */,
 				2FDA45AB242D09BD00FA314A /* FirebaseEvents.swift in Sources */,
 				2FDA45A3242D083200FA314A /* FirebaseSports.swift in Sources */,
+				2FB3CFEB24315BA7005D75BC /* KeyboardResponsive.swift in Sources */,
 				2F5C3E042425112B001A3293 /* EvdeKalView.swift in Sources */,
 				2FDA4580242CCA5800FA314A /* TextWithAttributedString.swift in Sources */,
 				2FDA4579242CC9CD00FA314A /* NewsView.swift in Sources */,
 				2F269743242F989900A261C7 /* SendPost.swift in Sources */,
+				2FB3CFE32430C875005D75BC /* Post.swift in Sources */,
 				2FDA456C242CC88B00FA314A /* FirebaseCovid.swift in Sources */,
 				2F5C3E0E24251B2B001A3293 /* NewsVM.swift in Sources */,
 			);
@@ -633,6 +659,7 @@
 			baseConfigurationReference = 33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Evde Kal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Korona #EvdeKal/Preview Content\"";
 				DEVELOPMENT_TEAM = 24G3237JT8;
@@ -655,6 +682,7 @@
 			baseConfigurationReference = 14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Evde Kal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Korona #EvdeKal/Preview Content\"";
 				DEVELOPMENT_TEAM = 24G3237JT8;

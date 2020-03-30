@@ -30,6 +30,8 @@ struct FBLogin: UIViewRepresentable {
     
     class Coordinator: NSObject,LoginButtonDelegate{
         
+        @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+        
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
             if error != nil {
                 print((error?.localizedDescription)!)
@@ -41,7 +43,7 @@ struct FBLogin: UIViewRepresentable {
                         print((err?.localizedDescription)!)
                         return
                     }
-                    print("success")
+                    self.presentationMode.wrappedValue.dismiss()
                 }
             }
         }
