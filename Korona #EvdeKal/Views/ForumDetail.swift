@@ -96,7 +96,7 @@ struct ForumDetail: View {
     }
     
     func sendComment(){
-        let model = Comment(dictionary: ["content": self.comment, "user": (session.session?.email)!, "created_at": Timestamp(date: Date())])
+        let model = Comment(dictionary: ["content": comment, "user": (session.session?.email)!, "created_at": Timestamp(date: Date())])
         let docData = try! FirestoreEncoder().encode(model)
         db.collection("konular").document(post.id).updateData([ "comments": FieldValue.arrayUnion([docData]) ]){ err in
                 if let err = err {

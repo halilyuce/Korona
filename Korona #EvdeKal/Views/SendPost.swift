@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import Firebase
+import CodableFirebase
 
 struct SendPost: View {
     @EnvironmentObject var session: SessionStore
@@ -17,6 +18,7 @@ struct SendPost: View {
     
     @State var title:String = ""
     @State var content:String = ""
+    var id:String = UUID().uuidString
     
     var body: some View {
         VStack{
@@ -52,15 +54,16 @@ struct SendPost: View {
     }
     
     func createPost() {
-        let addPost = Post(dictionary:["title": self.title, "content": self.content, "comments": [], "date": Timestamp(date:Date())])
-        do {
-            try db.collection("konular").document(UUID().uuidString).setData(from: addPost)
-            print("Başarıyla eklendi")
-            self.presentationMode.wrappedValue.dismiss()
-        } catch let error {
-            print("Error writing city to Firestore: \(error)")
+        let model = Post(dictionary: ["id": id, "title": title, "content": content, "comments": [], "user": (session.session?.email)!, "date": Timestamp(date:Date())])
+        let docData = try! FirestoreEncoder().encode(model)
+        db.collection("konular").document(self.id).setData(docData) { error in
+            if let error = error {
+                print("Error writing document: \(error)")
+            } else {
+                print("Başarıyla eklendi")
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
-        
     }
 }
 

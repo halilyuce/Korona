@@ -14,7 +14,7 @@ import OneSignal
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     let center = UNUserNotificationCenter.current()
     let options: UNAuthorizationOptions = [.badge, .alert, .sound, .carPlay]
@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        center.delegate = self
+        
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         OneSignal.initWithLaunchOptions(launchOptions,
         appId: "2d85a367-f851-4a0b-92ee-e587baa6f475",
@@ -46,6 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         return true
+    }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
+        -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 
     // MARK: UISceneSession Lifecycle

@@ -49,18 +49,22 @@ struct HealthView: View {
     }
     
     func createNotify(){
-        let content = UNMutableNotificationContent()
-        content.title = self.titles.randomElement()!
-        content.body = self.contents.randomElement()!
-        content.sound = UNNotificationSound.default
-        
-        let date = self.startTime
-        let triggerDaily = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
-        let request = UNNotificationRequest(identifier:"washHands", content: content, trigger: trigger)
-        
-        // add our notification request
-        UNUserNotificationCenter.current().add(request)
+        if Date() < self.endTime{
+            let dateStart = self.startTime.addingTimeInterval(3600)
+            
+            let content = UNMutableNotificationContent()
+            content.title = self.titles.randomElement()!
+            content.body = self.contents.randomElement()!
+            content.sound = UNNotificationSound.default
+            
+            let triggerDaily = Calendar.current.dateComponents([.hour, .minute, .second], from: dateStart)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+            let request = UNNotificationRequest(identifier:"washHands", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request)
+        }else{
+            print("do nothing")
+        }
     }
     
     var body: some View {
@@ -90,7 +94,6 @@ struct HealthView: View {
                         EmptyView()
                     }
                 }
-                
                 VStack(alignment:.leading, spacing: 20) {
                     Text("✋🏻 Ellerinizi Yıkayın").font(.title).fontWeight(.black)
                     List{
@@ -120,9 +123,8 @@ struct HealthView: View {
                             Spacer()
                             Text("\(endTime, formatter: dateFormatter)")
                         }
-                }.frame(width: UIScreen.main.bounds.width, height: 150, alignment: .leading).padding(.leading, -20)
+                    }.frame(width: UIScreen.main.bounds.width - 6, height: 150, alignment: .leading).padding(.leading, -12)
                 }
-                
                 NewsBig()
                 NewsHorizontal()
                 NewsList()
@@ -164,7 +166,7 @@ struct HealthView: View {
                     .font(.system(size: 14, weight:.bold))
                     .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemGreen), Color.blue]), startPoint: .bottomLeading, endPoint: .topTrailing))
                     .cornerRadius(4)
-                    .padding(.horizontal)
+                    .padding(.horizontal).padding(.bottom, 30)
             }
         }
         .partialSheet(presented: $isShowEnd, backgroundColor: Color(UIColor(named: "LightBackground")!), enableCover: true, coverColor: Color.black.opacity(0.4)) {
@@ -183,7 +185,7 @@ struct HealthView: View {
                     .font(.system(size: 14, weight:.bold))
                     .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemGreen), Color.blue]), startPoint: .bottomLeading, endPoint: .topTrailing))
                     .cornerRadius(4)
-                    .padding(.horizontal)
+                    .padding(.horizontal).padding(.bottom, 30)
             }
         }
     }

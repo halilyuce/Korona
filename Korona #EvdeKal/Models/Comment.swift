@@ -15,7 +15,7 @@ struct Comment: Codable {
     var date: Timestamp = Timestamp(date: Date())
     
      init(dictionary: [String: Any]) {
-        self.content = dictionary["id"] as? String ?? ""
+        self.content = dictionary["content"] as? String ?? ""
         self.user = dictionary["user"] as? String ?? ""
         self.date = dictionary["date"] as? Timestamp ?? Timestamp(date: Date())
     }
