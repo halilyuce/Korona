@@ -52,9 +52,9 @@ struct SendPost: View {
     }
     
     func createPost() {
-        let addPost = Post(dictionary:["id" : UUID().uuidString, "title": self.title, "content": self.content, "comments": [], "date": Timestamp(date:Date())])
+        let addPost = Post(dictionary:["title": self.title, "content": self.content, "comments": [], "date": Timestamp(date:Date())])
         do {
-            try db.collection("gonderiler").document(addPost.id).setData(from: addPost)
+            try db.collection("konular").document(UUID().uuidString).setData(from: addPost)
             print("Başarıyla eklendi")
             self.presentationMode.wrappedValue.dismiss()
         } catch let error {

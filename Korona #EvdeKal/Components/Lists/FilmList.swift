@@ -40,7 +40,8 @@ struct FilmList: View {
                                 .background(Color(UIColor(named: "SecondaryColor")!)).cornerRadius(10)
                             Text(film.title).font(.system(size: 19)).fontWeight(.bold)
                             Spacer(minLength: 5)
-                            Text(film.year).font(.system(size: 12)).fontWeight(.bold).foregroundColor(.gray)
+                            Text("IMDB Puanı: \(film.imdb, specifier: "%.2g")").font(.system(size: 12)).fontWeight(.bold).foregroundColor(.gray)
+                            Text("Yapım Yılı: \(film.year)").font(.system(size: 12)).fontWeight(.bold).foregroundColor(.gray)
                         }.frame(height:132)
                     }.padding(.bottom, 10)
                         .onTapGesture {

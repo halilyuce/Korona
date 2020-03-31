@@ -7,13 +7,13 @@
 //
 import SwiftUI
 import Firebase
+import CodableFirebase
 
 struct ForumDetail: View {
     @EnvironmentObject var session: SessionStore
     var post = Post(dictionary:["id": "", "title": "", "content": "", "comments": [], "date": Timestamp(date:Date())])
     private var db = Firestore.firestore()
     
-    @State private var showingSuccess = false
     @State private var showingError = false
     @State var comment:String = ""
     @State private var offsetValue: CGFloat = 0.0
@@ -77,11 +77,8 @@ struct ForumDetail: View {
                 }
                 }.background(Color(UIColor(named: "SecondaryColor")!)).keyboardSensible($offsetValue)
         }
-        .alert(isPresented: $showingSuccess) {
-            Alert(title: Text("Başarıyla Gönderildi"), message: Text("Yorumunuz başarıyla gönderildi."), dismissButton: .default(Text("Teşekkürler!")))
-        }
         .alert(isPresented: $showingError) {
-            Alert(title: Text("Hata"), message: Text("Bir gata meydana geldi, lütfen tekrar deneyin."), primaryButton: .default(Text("Gerek yok!")), secondaryButton: .default(Text("Tekrar Dene"), action: sendComment))
+            Alert(title: Text("Hata"), message: Text("Bir hata meydana geldi, lütfen tekrar deneyin."), primaryButton: .default(Text("Gerek yok!")), secondaryButton: .default(Text("Tekrar Dene"), action: sendComment))
         }
         .navigationBarTitle(Text("Konu Detayı"), displayMode: .inline)
         .navigationBarItems(trailing:
@@ -99,14 +96,15 @@ struct ForumDetail: View {
     }
     
     func sendComment(){
-            let addComment = ["body": self.comment, "user": (session.session?.email)!, "created_at": Timestamp(date: Date())] as Dictionary<String, Any>
-            db.collection("gonderiler").document(self.post.id).updateData([ "comments": FieldValue.arrayUnion([addComment]) ]){ err in
+        let model = Comment(dictionary: ["content": self.comment, "user": (session.session?.email)!, "created_at": Timestamp(date: Date())])
+        let docData = try! FirestoreEncoder().encode(model)
+        db.collection("konular").document(post.id).updateData([ "comments": FieldValue.arrayUnion([docData]) ]){ err in
                 if let err = err {
                     self.showingError = true
                     print("Error writing city to Firestore: \(err)")
                 } else {
                     print("Başarıyla eklendi")
-                    self.showingSuccess = true
+                    self.comment = ""
                 }
             }
     }

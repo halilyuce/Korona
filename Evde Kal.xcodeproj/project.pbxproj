@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,10 @@
 		2F5C3E0C2425132A001A3293 /* CoronaNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E0B2425132A001A3293 /* CoronaNews.swift */; };
 		2F5C3E0E24251B2B001A3293 /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E0D24251B2B001A3293 /* NewsVM.swift */; };
 		2F5C3E16242580A0001A3293 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E15242580A0001A3293 /* CategoryList.swift */; };
+		2F903EE7243353B1005FDFCA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EE6243353B1005FDFCA /* NotificationService.swift */; };
+		2F903EEB243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F903EF124336966005FDFCA /* WashHands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EF024336966005FDFCA /* WashHands.swift */; };
+		2F903EF62433A2AA005FDFCA /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2F903EF52433A2AA005FDFCA /* PartialSheet */; };
 		2FB3CFE12430C0E7005D75BC /* MultiLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */; };
 		2FB3CFE32430C875005D75BC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE22430C875005D75BC /* Post.swift */; };
 		2FB3CFE52430C9BE005D75BC /* FirebasePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE42430C9BE005D75BC /* FirebasePosts.swift */; };
@@ -73,9 +77,35 @@
 		2FDA45B7242D3DF600FA314A /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA45B6242D3DF600FA314A /* CourseList.swift */; };
 		2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA45B8242D3F4C00FA314A /* SporList.swift */; };
 		683BFBE1D04E12C2953D5056 /* Pods_Evde_Kal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2F1FC7CA2E7D28ED3E2C04 /* Pods_Evde_Kal.framework */; };
+		94380D849D550FE6248CB1B3 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D38983764FC1FD0EC1D6E49 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2F903EE9243353B1005FDFCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F5C3DCB24250840001A3293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F903EE3243353B1005FDFCA;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F903EEF243353B1005FDFCA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F903EEB243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		09917584286901B9FE4F6044 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evde Kal.release.xcconfig"; path = "Target Support Files/Pods-Evde Kal/Pods-Evde Kal.release.xcconfig"; sourceTree = "<group>"; };
 		2F269737242F68F000A261C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F26973E242F71C500A261C7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -100,6 +130,10 @@
 		2F5C3E0B2425132A001A3293 /* CoronaNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaNews.swift; sourceTree = "<group>"; };
 		2F5C3E0D24251B2B001A3293 /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		2F5C3E15242580A0001A3293 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F903EE6243353B1005FDFCA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		2F903EE8243353B1005FDFCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F903EF024336966005FDFCA /* WashHands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashHands.swift; sourceTree = "<group>"; };
 		2FB3CFDF2430B14B005D75BC /* Evde Kal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Evde Kal.entitlements"; sourceTree = "<group>"; };
 		2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextField.swift; sourceTree = "<group>"; };
 		2FB3CFE22430C875005D75BC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -146,8 +180,10 @@
 		2FDA45B6242D3DF600FA314A /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		2FDA45B8242D3F4C00FA314A /* SporList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SporList.swift; sourceTree = "<group>"; };
 		33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evde Kal.debug.xcconfig"; path = "Target Support Files/Pods-Evde Kal/Pods-Evde Kal.debug.xcconfig"; sourceTree = "<group>"; };
+		4D38983764FC1FD0EC1D6E49 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC53EB00DA63FEC6E8B5E8D /* Pods-Korona #EvdeKal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Korona #EvdeKal.release.xcconfig"; path = "Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal.release.xcconfig"; sourceTree = "<group>"; };
 		79AA64691A92B1226B890B64 /* Pods-Korona #EvdeKal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Korona #EvdeKal.debug.xcconfig"; path = "Target Support Files/Pods-Korona #EvdeKal/Pods-Korona #EvdeKal.debug.xcconfig"; sourceTree = "<group>"; };
+		84F8AFBDF8982ECD6D642340 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DF2F1FC7CA2E7D28ED3E2C04 /* Pods_Evde_Kal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evde_Kal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,7 +192,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F903EF62433A2AA005FDFCA /* PartialSheet in Frameworks */,
 				683BFBE1D04E12C2953D5056 /* Pods_Evde_Kal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F903EE1243353B1005FDFCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94380D849D550FE6248CB1B3 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +213,7 @@
 			children = (
 				2FB3CFDF2430B14B005D75BC /* Evde Kal.entitlements */,
 				2F5C3DD524250840001A3293 /* Korona #EvdeKal */,
+				2F903EE5243353B1005FDFCA /* OneSignalNotificationServiceExtension */,
 				2F5C3DD424250840001A3293 /* Products */,
 				AAA6B7762B864B840261ED59 /* Pods */,
 				B333B5BC331B3ED9BB54A79B /* Frameworks */,
@@ -178,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				2F5C3DD324250840001A3293 /* Evde Kal.app */,
+				2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,8 +335,18 @@
 				2FDA457C242CC9F800FA314A /* CategorySegment.swift */,
 				2F269746242FF54C00A261C7 /* FBLogin.swift */,
 				2F26974824301DB700A261C7 /* TWLogin.swift */,
+				2F903EF024336966005FDFCA /* WashHands.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2F903EE5243353B1005FDFCA /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2F903EE6243353B1005FDFCA /* NotificationService.swift */,
+				2F903EE8243353B1005FDFCA /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		2FDA456F242CC95400FA314A /* News Styles */ = {
@@ -334,6 +391,8 @@
 				5BC53EB00DA63FEC6E8B5E8D /* Pods-Korona #EvdeKal.release.xcconfig */,
 				33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */,
 				14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */,
+				09917584286901B9FE4F6044 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				84F8AFBDF8982ECD6D642340 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -342,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				DF2F1FC7CA2E7D28ED3E2C04 /* Pods_Evde_Kal.framework */,
+				4D38983764FC1FD0EC1D6E49 /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -358,15 +418,38 @@
 				2F5C3DD024250840001A3293 /* Frameworks */,
 				2F5C3DD124250840001A3293 /* Resources */,
 				E13CA02B1A9E514CCEEB71CF /* [CP] Embed Pods Frameworks */,
+				2F903EEF243353B1005FDFCA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F903EEA243353B1005FDFCA /* PBXTargetDependency */,
+			);
+			name = "Evde Kal";
+			packageProductDependencies = (
+				2F903EF52433A2AA005FDFCA /* PartialSheet */,
+			);
+			productName = "Korona #EvdeKal";
+			productReference = 2F5C3DD324250840001A3293 /* Evde Kal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F903EE3243353B1005FDFCA /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F903EEC243353B1005FDFCA /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				B81B2025D0754DF3AC20B5E1 /* [CP] Check Pods Manifest.lock */,
+				2F903EE0243353B1005FDFCA /* Sources */,
+				2F903EE1243353B1005FDFCA /* Frameworks */,
+				2F903EE2243353B1005FDFCA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Evde Kal";
-			productName = "Korona #EvdeKal";
-			productReference = 2F5C3DD324250840001A3293 /* Evde Kal.app */;
-			productType = "com.apple.product-type.application";
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -374,12 +457,15 @@
 		2F5C3DCB24250840001A3293 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Halil İbrahim YÜCE";
 				TargetAttributes = {
 					2F5C3DD224250840001A3293 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					2F903EE3243353B1005FDFCA = {
+						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -392,11 +478,15 @@
 				Base,
 			);
 			mainGroup = 2F5C3DCA24250840001A3293;
+			packageReferences = (
+				2F903EF42433A2AA005FDFCA /* XCRemoteSwiftPackageReference "PartialSheet" */,
+			);
 			productRefGroup = 2F5C3DD424250840001A3293 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2F5C3DD224250840001A3293 /* Evde Kal */,
+				2F903EE3243353B1005FDFCA /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -413,9 +503,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F903EE2243353B1005FDFCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B81B2025D0754DF3AC20B5E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DA9BB0015C4C1F4ABE6287EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +590,7 @@
 				2F5C3E0624251265001A3293 /* HealthView.swift in Sources */,
 				2FDA459D242D07AD00FA314A /* Games.swift in Sources */,
 				2F5C3DD724250840001A3293 /* AppDelegate.swift in Sources */,
+				2F903EF124336966005FDFCA /* WashHands.swift in Sources */,
 				2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */,
 				2FDA4582242CCB8100FA314A /* NewsDetail.swift in Sources */,
 				2FB3CFE9243121C7005D75BC /* Comment.swift in Sources */,
@@ -526,7 +646,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F903EE0243353B1005FDFCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F903EE7243353B1005FDFCA /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F903EEA243353B1005FDFCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F903EE3243353B1005FDFCA /* OneSignalNotificationServiceExtension */;
+			targetProxy = 2F903EE9243353B1005FDFCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2F5C3DE424250846001A3293 /* LaunchScreen.storyboard */ = {
@@ -658,6 +794,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33B120EC1B1FE9652B11EAD1 /* Pods-Evde Kal.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Evde Kal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -681,6 +818,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14EE058D2B6C00958C398171 /* Pods-Evde Kal.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Evde Kal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -697,6 +835,48 @@
 				PRODUCT_NAME = "Evde Kal";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2F903EED243353B1005FDFCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09917584286901B9FE4F6044 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24G3237JT8;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.labters.korona-evdekal.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F903EEE243353B1005FDFCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84F8AFBDF8982ECD6D642340 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24G3237JT8;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.labters.korona-evdekal.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -721,7 +901,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2F903EEC243353B1005FDFCA /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F903EED243353B1005FDFCA /* Debug */,
+				2F903EEE243353B1005FDFCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F903EF42433A2AA005FDFCA /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F903EF52433A2AA005FDFCA /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F903EF42433A2AA005FDFCA /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2F5C3DDA24250840001A3293 /* Korona__EvdeKal.xcdatamodeld */ = {

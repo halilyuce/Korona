@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Comment: NSObject, Codable {
+struct Comment: Codable {
     var content: String = ""
     var user: String = ""
     var date: Timestamp = Timestamp(date: Date())

@@ -33,7 +33,7 @@ struct NewsView: View {
     
     var body: some View {
         VStack(alignment:.leading, spacing: 20) {
-           Text("Haberler").font(.title).fontWeight(.black)
+           Text("📰 Haberler").font(.title).fontWeight(.black)
             ForEach(viewModel.news, id: \.name) { new in
                 VStack(alignment:.leading){
                     HStack(alignment:.top, spacing:20){

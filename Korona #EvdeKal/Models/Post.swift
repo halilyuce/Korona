@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Post: NSObject, Codable {
+struct Post: Codable {
     var id: String = ""
     var title: String = ""
     var content: String = ""
