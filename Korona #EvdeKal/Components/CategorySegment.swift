@@ -18,7 +18,7 @@ struct CategorySegment: View {
     
     @ObservedObject var selectedCategory: CategorySelect
     
-    var array:Array = ["film","book","music.note.list","gamecontroller","calendar","globe","studentdesk","person"]
+    var array:Array = ["film","book","music.note.list","gamecontroller","calendar","tag","globe","studentdesk","person"]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){

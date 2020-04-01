@@ -12,6 +12,7 @@ import Firebase
 import FBSDKCoreKit
 import OneSignal
 import UserNotifications
+import BackgroundTasks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -44,10 +45,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("User accepted notifications: \(accepted)")
         })
         
+        BGTaskScheduler.shared.register(
+            forTaskWithIdentifier: "com.labters.korona-evdekal.washHands",
+            using: DispatchQueue.global()
+        ) { task in
+            self.scheduleLocalNotification()
+        }
+        
         FirebaseApp.configure()
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         return true
+    }
+    
+    func scheduleLocalNotification() {
+        let request = BGProcessingTaskRequest(identifier: "com.labters.korona-evdekal.washHands")
+        request.requiresNetworkConnectivity = false
+        request.requiresExternalPower = false
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 3600.0)
+        do {
+        try BGTaskScheduler.shared.submit(request)
+            HealthView().createNotify()
+        } catch {
+        print("Could not schedule notification: (error)")
+        }
     }
     
     func userNotificationCenter(

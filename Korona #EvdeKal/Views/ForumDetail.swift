@@ -15,8 +15,10 @@ struct ForumDetail: View {
     private var db = Firestore.firestore()
     
     @State private var showingError = false
+    @State private var confirmFlag = false
     @State var comment:String = ""
     @State private var offsetValue: CGFloat = 0.0
+    @State private var showShareSheet = false
     
     init(post: Post){
         self.post = post
@@ -78,16 +80,24 @@ struct ForumDetail: View {
                 }.background(Color(UIColor(named: "SecondaryColor")!)).keyboardSensible($offsetValue)
         }
         .alert(isPresented: $showingError) {
-            Alert(title: Text("Hata"), message: Text("Bir hata meydana geldi, lütfen tekrar deneyin."), primaryButton: .default(Text("Gerek yok!")), secondaryButton: .default(Text("Tekrar Dene"), action: sendComment))
+            Alert(title: Text("Hata"), message: Text("Bir hata meydana geldi, lütfen tekrar deneyin."), primaryButton: .destructive(Text("Gerek yok!")), secondaryButton: .default(Text("Tekrar Dene"), action: sendComment))
+        }
+        .alert(isPresented: $confirmFlag) {
+            Alert(title: Text("Şikayet"), message: Text("Bu gönderiyi şikayet etmek istediğinizden emin misiniz ?"), primaryButton: .destructive(Text("Vazgeçtim")), secondaryButton: .default(Text("Evet!"), action: sendFlag))
+        }
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(activityItems: [self.post.title, self.post.content])
         }
         .navigationBarTitle(Text("Konu Detayı"), displayMode: .inline)
         .navigationBarItems(trailing:
             HStack(alignment: .center, spacing: 25){
                 Button(action: {
+                    self.confirmFlag = true
                 }, label: {
                     Image(systemName: "flag")
                 })
                 Button(action: {
+                    self.showShareSheet = true
                 }, label: {
                     Image(systemName: "square.and.arrow.up")
                 })
@@ -108,6 +118,16 @@ struct ForumDetail: View {
                 }
             }
     }
+    
+    func sendFlag(){
+        let flagId = UUID().uuidString
+        db.collection("sikayetler").document(flagId).setData(["id":"\(flagId)", "post_id":"\(post.id)", "post_title":"\(post.title)", "post_content":"\(post.content)", "post_date":post.date, "post_user":"\(post.user)"]){ err in
+            if let err = err {
+                print("Error writing city to Firestore: \(err)")
+            }
+        }
+    }
+    
 }
 
 struct ForumDetail_Previews: PreviewProvider {

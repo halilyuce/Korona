@@ -28,6 +28,9 @@
 		2F5C3E0C2425132A001A3293 /* CoronaNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E0B2425132A001A3293 /* CoronaNews.swift */; };
 		2F5C3E0E24251B2B001A3293 /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E0D24251B2B001A3293 /* NewsVM.swift */; };
 		2F5C3E16242580A0001A3293 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C3E15242580A0001A3293 /* CategoryList.swift */; };
+		2F6589142434C0D70097F928 /* Opportunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6589132434C0D70097F928 /* Opportunities.swift */; };
+		2F6589162434C1130097F928 /* FirebaseOpportunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6589152434C1130097F928 /* FirebaseOpportunities.swift */; };
+		2F6589182434C1AE0097F928 /* OpportunitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6589172434C1AE0097F928 /* OpportunitiesList.swift */; };
 		2F903EE7243353B1005FDFCA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EE6243353B1005FDFCA /* NotificationService.swift */; };
 		2F903EEB243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F903EF124336966005FDFCA /* WashHands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EF024336966005FDFCA /* WashHands.swift */; };
@@ -130,6 +133,9 @@
 		2F5C3E0B2425132A001A3293 /* CoronaNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaNews.swift; sourceTree = "<group>"; };
 		2F5C3E0D24251B2B001A3293 /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		2F5C3E15242580A0001A3293 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		2F6589132434C0D70097F928 /* Opportunities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opportunities.swift; sourceTree = "<group>"; };
+		2F6589152434C1130097F928 /* FirebaseOpportunities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseOpportunities.swift; sourceTree = "<group>"; };
+		2F6589172434C1AE0097F928 /* OpportunitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunitiesList.swift; sourceTree = "<group>"; };
 		2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F903EE6243353B1005FDFCA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		2F903EE8243353B1005FDFCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,6 +304,7 @@
 				2FDA45AA242D09BD00FA314A /* FirebaseEvents.swift */,
 				2FDA45AC242D0A1D00FA314A /* FirebaseCourses.swift */,
 				2FB3CFE42430C9BE005D75BC /* FirebasePosts.swift */,
+				2F6589152434C1130097F928 /* FirebaseOpportunities.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 				2FDA45A0242D07FC00FA314A /* Events.swift */,
 				2FB3CFE22430C875005D75BC /* Post.swift */,
 				2FB3CFE8243121C7005D75BC /* Comment.swift */,
+				2F6589132434C0D70097F928 /* Opportunities.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 				2FDA45B4242D3CC100FA314A /* LinkList.swift */,
 				2FDA45B6242D3DF600FA314A /* CourseList.swift */,
 				2FDA45B8242D3F4C00FA314A /* SporList.swift */,
+				2F6589172434C1AE0097F928 /* OpportunitiesList.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -593,6 +602,7 @@
 				2F903EF124336966005FDFCA /* WashHands.swift in Sources */,
 				2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */,
 				2FDA4582242CCB8100FA314A /* NewsDetail.swift in Sources */,
+				2F6589142434C0D70097F928 /* Opportunities.swift in Sources */,
 				2FB3CFE9243121C7005D75BC /* Comment.swift in Sources */,
 				2FDA456A242CC85800FA314A /* Covid.swift in Sources */,
 				2F26973F242F71C500A261C7 /* WelcomeView.swift in Sources */,
@@ -608,6 +618,7 @@
 				2FDA4591242CF0D200FA314A /* BookList.swift in Sources */,
 				2FDA4595242CF13100FA314A /* FirebaseBooks.swift in Sources */,
 				2FB3CFE72430F5DE005D75BC /* ForumDetail.swift in Sources */,
+				2F6589162434C1130097F928 /* FirebaseOpportunities.swift in Sources */,
 				2F5C3E16242580A0001A3293 /* CategoryList.swift in Sources */,
 				2FDA45B5242D3CC100FA314A /* LinkList.swift in Sources */,
 				2FDA459F242D07DB00FA314A /* Links.swift in Sources */,
@@ -632,6 +643,7 @@
 				2FDA4568242CC84200FA314A /* Health.swift in Sources */,
 				2FDA45B1242D0EE200FA314A /* GameList.swift in Sources */,
 				2FDA459B242D075800FA314A /* Musics.swift in Sources */,
+				2F6589182434C1AE0097F928 /* OpportunitiesList.swift in Sources */,
 				2FDA45B7242D3DF600FA314A /* CourseList.swift in Sources */,
 				2FDA45AB242D09BD00FA314A /* FirebaseEvents.swift in Sources */,
 				2FDA45A3242D083200FA314A /* FirebaseSports.swift in Sources */,

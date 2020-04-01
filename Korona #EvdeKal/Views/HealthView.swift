@@ -49,16 +49,20 @@ struct HealthView: View {
     }
     
     func createNotify(){
-        if Date() < self.endTime{
-            let dateStart = self.startTime.addingTimeInterval(3600)
-            
+        let now = Date()
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone.current
+        let nowHour = calendar.component(.hour, from: now)
+        let endHour = calendar.component(.hour, from: endTime)
+        
+        if nowHour <= endHour{
             let content = UNMutableNotificationContent()
-            content.title = self.titles.randomElement()!
-            content.body = self.contents.randomElement()!
+            content.title = titles.randomElement()!
+            content.body = contents.randomElement()!
             content.sound = UNNotificationSound.default
             
-            let triggerDaily = Calendar.current.dateComponents([.hour, .minute, .second], from: dateStart)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+            let interval:TimeInterval = 3600.0 // 1 minute = 60 seconds
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
             let request = UNNotificationRequest(identifier:"washHands", content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request)

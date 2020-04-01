@@ -33,10 +33,12 @@ struct EvdeKalView: View {
                         }else if selectedCategory.selected == 4{
                             EventList().padding(.horizontal)
                         }else if selectedCategory.selected == 5{
-                            LinkList().padding(.horizontal)
+                            OpportunitiesList().padding(.horizontal)
                         }else if selectedCategory.selected == 6{
-                            CourseList().padding(.horizontal)
+                            LinkList().padding(.horizontal)
                         }else if selectedCategory.selected == 7{
+                            CourseList().padding(.horizontal)
+                        }else if selectedCategory.selected == 8{
                             SporList().padding(.horizontal)
                         }else{
                             EmptyView()
