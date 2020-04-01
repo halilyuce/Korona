@@ -33,7 +33,6 @@
 		2F6589182434C1AE0097F928 /* OpportunitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6589172434C1AE0097F928 /* OpportunitiesList.swift */; };
 		2F903EE7243353B1005FDFCA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EE6243353B1005FDFCA /* NotificationService.swift */; };
 		2F903EEB243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2F903EF124336966005FDFCA /* WashHands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EF024336966005FDFCA /* WashHands.swift */; };
 		2F903EF62433A2AA005FDFCA /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2F903EF52433A2AA005FDFCA /* PartialSheet */; };
 		2FB3CFE12430C0E7005D75BC /* MultiLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */; };
 		2FB3CFE32430C875005D75BC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE22430C875005D75BC /* Post.swift */; };
@@ -139,7 +138,6 @@
 		2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F903EE6243353B1005FDFCA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		2F903EE8243353B1005FDFCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F903EF024336966005FDFCA /* WashHands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashHands.swift; sourceTree = "<group>"; };
 		2FB3CFDF2430B14B005D75BC /* Evde Kal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Evde Kal.entitlements"; sourceTree = "<group>"; };
 		2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextField.swift; sourceTree = "<group>"; };
 		2FB3CFE22430C875005D75BC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				2FDA457C242CC9F800FA314A /* CategorySegment.swift */,
 				2F269746242FF54C00A261C7 /* FBLogin.swift */,
 				2F26974824301DB700A261C7 /* TWLogin.swift */,
-				2F903EF024336966005FDFCA /* WashHands.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -599,7 +596,6 @@
 				2F5C3E0624251265001A3293 /* HealthView.swift in Sources */,
 				2FDA459D242D07AD00FA314A /* Games.swift in Sources */,
 				2F5C3DD724250840001A3293 /* AppDelegate.swift in Sources */,
-				2F903EF124336966005FDFCA /* WashHands.swift in Sources */,
 				2FDA45B9242D3F4C00FA314A /* SporList.swift in Sources */,
 				2FDA4582242CCB8100FA314A /* NewsDetail.swift in Sources */,
 				2F6589142434C0D70097F928 /* Opportunities.swift in Sources */,

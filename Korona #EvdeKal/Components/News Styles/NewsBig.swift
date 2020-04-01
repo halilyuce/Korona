@@ -13,12 +13,13 @@ import SDWebImageSwiftUI
 struct NewsBig: View {
 
 @ObservedObject var fbData = firebaseData
+@State var isPresented: Bool = false
+@State var selectedNews = NewsDetail(title: "", content: "", image: "", video: "")
 
 var body: some View {
     VStack(alignment: .leading, spacing: 20){
     Group{
         if fbData.data.count > 0 {
-            VStack(alignment: .leading){
                 VStack(alignment: .leading, spacing: 20){
                     Text("🧑🏻‍⚕️ Uzman Tavsiyeleri").font(.title).fontWeight(.black)
                     ZStack{
@@ -49,16 +50,18 @@ var body: some View {
                         .background(Color(UIColor(named: "SecondaryColor")!)).cornerRadius(10)
                         Text(fbData.data[0].title).font(.system(size: 24)).fontWeight(.bold)
                     }
+                }.onTapGesture {
+                    self.selectedNews = NewsDetail(title: self.fbData.data[0].title, content: self.fbData.data[0].description, image: self.fbData.data[0].image, video: self.fbData.data[0].video)
+                    self.isPresented.toggle()
                 }
-                NavigationLink(destination: NewsDetail(title: fbData.data[0].title, content: fbData.data[0].description, image: fbData.data[0].image, video: fbData.data[0].video)){
-                    EmptyView()
-                }
-            }
         }else {
             EmptyView()
         }
     }
     Divider()
+    }
+    .sheet(isPresented: $isPresented) {
+        self.selectedNews
     }
 }
 }

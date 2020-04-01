@@ -13,6 +13,8 @@ import SDWebImageSwiftUI
 struct NewsHorizontal: View {
 
 @ObservedObject var fbData = firebaseData
+@State var isPresented: Bool = false
+@State var selectedNews = NewsDetail(title: "", content: "", image: "", video: "")
 
 var body: some View {
     VStack(alignment: .leading, spacing: 20){
@@ -20,7 +22,6 @@ var body: some View {
             if fbData.data.count > 2 {
                 HStack(alignment:.top, spacing:20){
                     ForEach(1..<3, id: \.self){ index in
-                        VStack(alignment:.leading){
                             VStack(alignment:.leading, spacing:8){
                                 ZStack{
                                     WebImage(url: URL(string:self.fbData.data[index].image))
@@ -52,11 +53,10 @@ var body: some View {
                                 Text(self.fbData.data[index].title).font(.system(size: 19)).fontWeight(.bold).lineLimit(.none)
                                 Spacer(minLength: 5)
                                 Text(self.fbData.data[index].created_at.dateValue().timeAgoSinceDate()).font(.system(size: 12)).fontWeight(.bold).foregroundColor(.gray)
+                            }.onTapGesture {
+                                self.selectedNews = NewsDetail(title: self.fbData.data[index].title, content: self.fbData.data[index].description, image: self.fbData.data[index].image, video: self.fbData.data[index].video)
+                                self.isPresented.toggle()
                             }
-                            NavigationLink(destination: NewsDetail(title: self.fbData.data[index].title, content:  self.fbData.data[index].description, image:  self.fbData.data[index].image, video:  self.fbData.data[index].video)){
-                                EmptyView()
-                            }
-                        }
                     }
                 }.frame(height:270)
             }else{
@@ -64,6 +64,9 @@ var body: some View {
             }
         }
     Divider()
+    }
+    .sheet(isPresented: $isPresented) {
+        self.selectedNews
     }
 }
 }
