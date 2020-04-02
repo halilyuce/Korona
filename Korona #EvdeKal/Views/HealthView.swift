@@ -28,7 +28,7 @@ struct HealthView: View {
         return formatter
     }
     
-    var titles: [String] = ["Ellerini Yıkama Vaktin Geldi 👐🏻", "Ellerini Yıkıyorsundur Umarım 🙄", "Hey, Hadi Ellerini Yıka ✋🏻", "Vakit Geldi, Hadi Lavaboya 🏃🏻‍♀️💨"]
+    var titles: [String] = ["Ellerini Yıkama Vaktin Geldi 👐🏻", "Ellerini Yıkıyorsundur Umarım 🙄", "Hey, Haydi Ellerini Yıka ✋🏻", "Vakit Geldi, Haydi Lavaboya 🏃🏻‍♀️💨"]
     var contents: [String] = ["Ellerini yıkamanın virüsden korunmak için ne kadar önemli olduğunu unutma, üşenme 🐨", "Ellerini yıkıyarak sadece kendini değil çevrendeki insanları da korumuş olursun 😇", "Bir sürü yere dokundun, dezenfekte olma vakti geldi 🤷🏻‍♂️", "Ellerini yıkamayı erteleme, birazdan dersen gitmeyeceğini ikimiz de biliyoruz 🤦🏻‍♂️ Haydi kalk 😬"]
     
     init(){

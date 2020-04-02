@@ -56,7 +56,7 @@ struct SendPost: View {
     func createPost() {
         let model = Post(dictionary: ["id": id, "title": title, "content": content, "comments": [], "user": (session.session?.email)!, "date": Timestamp(date:Date())])
         let docData = try! FirestoreEncoder().encode(model)
-        db.collection("konular").document(self.id).setData(docData) { error in
+        db.collection("postlar").document(self.id).setData(docData) { error in
             if let error = error {
                 print("Error writing document: \(error)")
             } else {

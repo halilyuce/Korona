@@ -95,7 +95,7 @@ struct RegisterView: View {
                     Spacer()
                     VStack(spacing:10){
                         Text("Hesap Oluştur").font(.system(size: 32, weight: .heavy)).padding(.horizontal)
-                        Text("Hesabınız yok mu ? Hadi oluşturalım").font(.system(size: 18, weight: .medium)).foregroundColor(.gray).padding(.horizontal)
+                        Text("Hesabınız yok mu ? Haydi oluşturalım").font(.system(size: 18, weight: .medium)).foregroundColor(.gray).padding(.horizontal)
                     }
                     VStack(spacing:14){
                         TextField("Email Adresiniz", text: $email).padding(12)
