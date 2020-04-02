@@ -43,7 +43,7 @@ var body: some View {
                             }
                         }
                         
-                    }.frame(width: UIScreen.main.bounds.width - 30)
+                    }.frame(width: UIScreen.main.bounds.width - 38)
                     VStack(alignment:.leading, spacing:5){ Text(fbData.data[0].category).font(.system(size: 12)).fontWeight(.bold)
                         .padding(.horizontal , 10)
                         .padding(.vertical , 5)

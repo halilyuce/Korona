@@ -16,6 +16,7 @@ struct NewsDetail: View {
     var content:String = ""
     var image:String = ""
     var video:String = ""
+    var attr = NSAttributedString()
     var imageShare = UIImageView()
     @State private var showShareSheet = false
     let screenWidth = UIScreen.main.bounds.width
@@ -27,6 +28,9 @@ struct NewsDetail: View {
         self.image = image
         self.video = video
         self.imageShare.downloaded(from: image)
+        
+        self.attr = String(format:self.formatString, content).convertHtml()
+        
     }
     
     var body: some View {
@@ -48,7 +52,7 @@ struct NewsDetail: View {
                 }
                 Text(title).fontWeight(.bold).lineLimit(.none).padding(.horizontal).font(.title)
             }
-            TextWithAttributedString(html: String(format:formatString, content)).padding(.horizontal).frame(width: screenWidth)
+            TextWithAttributedString(html: String(format:formatString, content)).padding(.horizontal).frame(width: screenWidth, height: attr.textHeightFrom(width: self.screenWidth - 32, font: UIFont.systemFont(ofSize: 17)))
             Divider()
         }
         .sheet(isPresented: $showShareSheet) {

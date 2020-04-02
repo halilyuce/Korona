@@ -131,8 +131,8 @@ struct HealthView: View {
                 }
                 NewsBig()
                 NewsHorizontal()
-                NewsList()
-                StepbyStep().listRowBackground(Color(UIColor(named: "LightBackground")!)).padding(.vertical)
+                NewsList().padding(.bottom)
+                StepbyStep().listRowBackground(Color(UIColor(named: "SecondaryColor")!)).padding(.vertical)
                 NewsView()
             }
             .navigationBarTitle(Text("Sağlık"))

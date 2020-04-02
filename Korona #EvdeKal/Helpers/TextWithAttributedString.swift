@@ -29,10 +29,10 @@ class ViewWithLabel : UIView {
     }
     
     func setString(_ html:String) {
-            DispatchQueue.main.async {
-                self.label.attributedText = html.convertHtml()
-                self.label.textColor = UIColor(named: "DarkColor")!
-            }
+        DispatchQueue.main.async {
+            self.label.attributedText = html.convertHtml()
+            self.label.textColor = UIColor(named: "DarkColor")!
+        }
     }
 }
 
@@ -46,6 +46,8 @@ struct TextWithAttributedString: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ViewWithLabel, context: Context) {
-        uiView.setString(html)
+        DispatchQueue.main.async {
+            uiView.setString(self.html)
+        }
     }
 }
