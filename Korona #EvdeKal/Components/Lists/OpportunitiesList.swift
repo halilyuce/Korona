@@ -21,7 +21,7 @@ struct OpportunitiesList: View {
            Text("Fırsatlar & Kampanyalar").font(.title).fontWeight(.black)
             ForEach(fbOpportunities.data, id: \.id) { opportunity in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: opportunity.image))
                                 .resizable()

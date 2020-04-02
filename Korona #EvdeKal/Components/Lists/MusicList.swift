@@ -21,7 +21,7 @@ struct MusicList: View {
            Text("Müzik & Playlist Önerileri").font(.title).fontWeight(.black)
             ForEach(fbMusic.data, id: \.id) { music in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: music.image))
                                 .resizable()

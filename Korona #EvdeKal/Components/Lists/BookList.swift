@@ -21,7 +21,7 @@ struct BookList: View {
            Text("Kitap Önerileri").font(.title).fontWeight(.black)
             ForEach(fbBook.data, id: \.id) { book in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: book.image))
                                 .resizable()

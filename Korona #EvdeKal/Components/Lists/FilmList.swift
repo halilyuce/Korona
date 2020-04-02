@@ -21,7 +21,7 @@ struct FilmList: View {
            Text("Film / Dizi Önerileri").font(.title).fontWeight(.black)
             ForEach(fbFilm.data, id: \.id) { film in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: film.image))
                                 .resizable()

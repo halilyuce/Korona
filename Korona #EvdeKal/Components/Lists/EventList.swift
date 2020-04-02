@@ -21,7 +21,7 @@ struct EventList: View {
            Text("Etkinlikler").font(.title).fontWeight(.black)
             ForEach(fbEvent.data, id: \.id) { event in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: event.image))
                                 .resizable()

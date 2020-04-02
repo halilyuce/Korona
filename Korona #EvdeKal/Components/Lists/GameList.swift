@@ -21,7 +21,7 @@ struct GameList: View {
            Text("Oyun Önerileri").font(.title).fontWeight(.black)
             ForEach(fbGame.data, id: \.id) { game in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: game.image))
                                 .resizable()

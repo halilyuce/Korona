@@ -18,10 +18,10 @@ struct LinkList: View {
     
     var body: some View {
         VStack(alignment:.leading, spacing: 20) {
-           Text("Faydalı & İlginç Linkler").font(.title).fontWeight(.black)
+           Text("Faydalı Linkler").font(.title).fontWeight(.black)
             ForEach(fbLink.data, id: \.id) { link in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:17){
                         Group{
                             WebImage(url: URL(string: link.image))
                                 .resizable()

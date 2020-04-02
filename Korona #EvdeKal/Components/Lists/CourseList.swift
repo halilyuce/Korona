@@ -18,10 +18,10 @@ struct CourseList: View {
     
     var body: some View {
         VStack(alignment:.leading, spacing: 20) {
-           Text("Kişisel Gelişim & Kurslar").font(.title).fontWeight(.black)
+           Text("Kişisel Gelişim").font(.title).fontWeight(.black)
             ForEach(fbCourse.data, id: \.id) { course in
                 VStack(alignment:.leading){
-                    HStack(alignment:.top, spacing:20){
+                    HStack(alignment:.top, spacing:18){
                         Group{
                             WebImage(url: URL(string: course.image))
                                 .resizable()
