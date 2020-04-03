@@ -9,18 +9,14 @@
 import Foundation
 import SwiftUI
 import SDWebImageSwiftUI
-import PartialSheet
 import UserNotifications
 
 struct HealthView: View {
     
-    @ObservedObject var fbCovid = firebaseCovid
-    
     @State var isEnabledNotify: Bool = UserDefaults.standard.bool(forKey: "localNotify")
     @State var startTime: Date = UserDefaults.standard.object(forKey: "startTime") as? Date ?? Date()
     @State var endTime: Date = UserDefaults.standard.object(forKey: "endTime") as? Date ?? Date().addingTimeInterval(3600)
-    @State var isShowStart:Bool = false
-    @State var isShowEnd:Bool = false
+    @State var isShow:Bool = false
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -52,8 +48,8 @@ struct HealthView: View {
         let now = Date()
         var calendar = Calendar.current
         calendar.timeZone = TimeZone.current
-        let nowHour = calendar.component(.hour, from: now)
-        let endHour = calendar.component(.hour, from: endTime)
+        let nowHour:Int = calendar.component(.hour, from: now)
+        let endHour:Int = calendar.component(.hour, from: endTime)
         
         if nowHour <= endHour{
             let content = UNMutableNotificationContent()
@@ -74,30 +70,22 @@ struct HealthView: View {
     var body: some View {
         NavigationView {
             List{
-                Group{
-                    if fbCovid.data.count > 0 {
-                        VStack(alignment:.leading){
-                            HStack(spacing:20){
-                                Text("COVID-19 hakkında detaylı bilgiler ve Sıkça Sorulan Sorular için tıklayınız.")
-                                    .lineLimit(nil)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 14))
-                                    .padding(10)
-                                Spacer(minLength: 5)
-                                Image(systemName: "chevron.right")
-                                    .frame(width:40)
-                                    .foregroundColor(.white)
-                            }.background(Color(UIColor(named: "Green")!))
-                                .cornerRadius(8)
-                                .frame(height:70)
-                            NavigationLink(destination: NewsDetail(title: fbCovid.data[0].title, content: fbCovid.data[0].content, image: fbCovid.data[0].image, video: "")) {
-                                EmptyView()
-                            }
+                    HStack(spacing:20){
+                        Text("Twitter ve Instagram Hesaplarımız : @evdekalapp")
+                            .lineLimit(nil)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14))
+                            .padding(10)
+                            .padding(.leading, 5)
+                        Spacer(minLength: 5)
+                        Image(systemName: "person.crop.circle")
+                            .frame(width:40)
+                            .foregroundColor(.white)
+                            .padding(.trailing, 5)
                         }
-                    }else {
-                        EmptyView()
-                    }
-                }
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .bottomLeading, endPoint: .topTrailing))
+                        .cornerRadius(8)
+                        .frame(height:70)
                 VStack(alignment:.leading, spacing: 20) {
                     Text("✋🏻 Ellerinizi Yıkayın").font(.title).fontWeight(.black)
                     List{
@@ -111,7 +99,7 @@ struct HealthView: View {
                         }
                         HStack{
                             Button(action: {
-                                self.isShowStart = true
+                                self.isShow = true
                             }) {
                                 Text("Başlangıç Saati")
                             }
@@ -120,7 +108,7 @@ struct HealthView: View {
                         }
                         HStack{
                             Button(action: {
-                                self.isShowEnd = true
+                                self.isShow = true
                             }) {
                                 Text("Bitiş Saati")
                             }
@@ -130,11 +118,36 @@ struct HealthView: View {
                     }.frame(width: UIScreen.main.bounds.width - 6, height: 150, alignment: .leading).padding(.leading, -12)
                 }
                 NewsBig()
-                NewsHorizontal()
-                NewsList().padding(.bottom)
+                NewsHorizontal().padding(.top, 5)
+                NewsList().padding(.bottom).padding(.top, 5)
                 StepbyStep().listRowBackground(Color(UIColor(named: "SecondaryColor")!)).padding(.vertical)
                 NewsView()
             }
+                .sheet(isPresented: $isShow) {
+                    VStack{
+                        Text("Başlangıç Saati").font(.title).fontWeight(.black)
+                        DatePicker(selection: self.$startTime, displayedComponents: .hourAndMinute) {
+                            EmptyView()
+                        }.labelsHidden()
+                        Text("Bitiş Saati").font(.title).fontWeight(.black)
+                        DatePicker(selection: self.$endTime, in: self.startTime..., displayedComponents: .hourAndMinute) {
+                            EmptyView()
+                        }.labelsHidden()
+                        Button(action: {
+                            UserDefaults.standard.set(self.startTime, forKey: "startTime")
+                            UserDefaults.standard.set(self.endTime, forKey: "endTime")
+                            self.isShow = false
+                        }) {
+                            Text("Seç")
+                        }.frame(minWidth:0, maxWidth: .infinity)
+                            .frame(height:50)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight:.bold))
+                            .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemGreen), Color.blue]), startPoint: .bottomLeading, endPoint: .topTrailing))
+                            .cornerRadius(4)
+                            .padding(.horizontal).padding(.bottom, 30)
+                    }
+                }
             .navigationBarTitle(Text("Sağlık"))
             .navigationBarItems(trailing:
                 Button(action: {
@@ -153,44 +166,6 @@ struct HealthView: View {
                     }
                 })
             )
-        }
-        .partialSheet(presented: $isShowStart, backgroundColor: Color(UIColor(named: "LightBackground")!), enableCover: true, coverColor: Color.black.opacity(0.4)) {
-            VStack{
-                DatePicker(selection: self.$startTime, displayedComponents: .hourAndMinute) {
-                    EmptyView()
-                }.labelsHidden()
-                Button(action: {
-                    UserDefaults.standard.set(self.startTime, forKey: "startTime")
-                    self.isShowStart = false
-                }) {
-                    Text("Seç")
-                }.frame(minWidth:0, maxWidth: .infinity)
-                    .frame(height:50)
-                    .foregroundColor(.white)
-                    .font(.system(size: 14, weight:.bold))
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemGreen), Color.blue]), startPoint: .bottomLeading, endPoint: .topTrailing))
-                    .cornerRadius(4)
-                    .padding(.horizontal).padding(.bottom, 30)
-            }
-        }
-        .partialSheet(presented: $isShowEnd, backgroundColor: Color(UIColor(named: "LightBackground")!), enableCover: true, coverColor: Color.black.opacity(0.4)) {
-            VStack{
-                DatePicker(selection: self.$endTime, in: self.startTime..., displayedComponents: .hourAndMinute) {
-                    EmptyView()
-                }.labelsHidden()
-                Button(action: {
-                    UserDefaults.standard.set(self.endTime, forKey: "endTime")
-                    self.isShowEnd = false
-                }) {
-                    Text("Seç")
-                }.frame(minWidth:0, maxWidth: .infinity)
-                    .frame(height:50)
-                    .foregroundColor(.white)
-                    .font(.system(size: 14, weight:.bold))
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemGreen), Color.blue]), startPoint: .bottomLeading, endPoint: .topTrailing))
-                    .cornerRadius(4)
-                    .padding(.horizontal).padding(.bottom, 30)
-            }
         }
     }
 }

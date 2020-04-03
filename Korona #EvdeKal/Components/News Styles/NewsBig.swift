@@ -21,7 +21,7 @@ var body: some View {
     Group{
         if fbData.data.count > 0 {
                 VStack(alignment: .leading, spacing: 20){
-                    Text("🧑🏻‍⚕️ Uzman Tavsiyeleri").font(.title).fontWeight(.black)
+                    Text("🧑🏻‍⚕️ İçerikler").font(.title).fontWeight(.black)
                     ZStack{
                         WebImage(url: URL(string:fbData.data[0].image))
                             .resizable()

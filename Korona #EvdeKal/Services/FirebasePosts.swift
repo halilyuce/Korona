@@ -37,9 +37,6 @@ class FirebasePosts: ObservableObject {
             documentSnapshot!.documentChanges.forEach { diff in
                 // Real time create from server
                 
-
-                print(diff.document.data())
-                
                 if (diff.type == .added) {
                    
                     let model = try! FirestoreDecoder().decode(Post.self, from: diff.document.data())

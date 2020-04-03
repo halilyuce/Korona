@@ -13,30 +13,30 @@ struct StepbyStep: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 30){
-            Text("#EvdeKal").font(.title).fontWeight(.black).foregroundColor(Color(UIColor.systemGreen))
+            Text("Evde Kalarak").font(.title).fontWeight(.black).foregroundColor(Color(UIColor.systemGreen))
             HStack(alignment: .center, spacing: 20){
                 Image(systemName: "1.circle").font(.largeTitle).foregroundColor(Color(UIColor.systemGreen))
-                Text("Ziyaretçi kabul etmeyin.").font(.headline)
+                Text("Kendini ve sevdiklerini korursun").font(.headline)
             }
             Divider()
             HStack(alignment: .center, spacing: 20){
                 Image(systemName: "2.circle").font(.largeTitle).foregroundColor(Color(UIColor.systemGreen))
-                Text("Mümkünse ayrı bir odada kalın.").font(.headline)
+                Text("Hastalığın yayılmasını önlersin").font(.headline)
             }
             Divider()
             HStack(alignment: .center, spacing: 20){
                 Image(systemName: "3.circle").font(.largeTitle).foregroundColor(Color(UIColor.systemGreen))
-                Text("Mümkünse ayrı tuvalet ve banyo kullanın.").font(.headline)
+                Text("Ailene ve sevdiklerine daha çok vakit ayırma fırsatını değerlendirebilirsin").font(.headline)
             }
             Divider()
             HStack(alignment: .center, spacing: 20){
                 Image(systemName: "4.circle").font(.largeTitle).foregroundColor(Color(UIColor.systemGreen))
-                Text("Sık sık el hijyeni sağlayın (Ellerinizi su ve normal sabunla yıkayın ve alkollü el antiseptiği ile ovalayın).").font(.headline)
+                Text("Uygulamamızdaki aktiviteler ile eğlenceli ve verimli vakit geçirebilirsin").font(.headline)
             }
             Divider()
             HStack(alignment: .center, spacing: 20){
                 Image(systemName: "5.circle").font(.largeTitle).foregroundColor(Color(UIColor.systemGreen))
-                Text("Tabak, bardak, havlu vb. gibi eşyalarınızı ayırın, ortak kullanmayın.").font(.headline)
+                Text("Sunduğumuz ücretsiz kurslar ile kişisel gelişiminize katkıda bulunabilirsiniz").font(.headline)
             }
         }
     }

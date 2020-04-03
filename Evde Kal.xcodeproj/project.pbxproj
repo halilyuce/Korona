@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,7 +33,6 @@
 		2F6589182434C1AE0097F928 /* OpportunitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6589172434C1AE0097F928 /* OpportunitiesList.swift */; };
 		2F903EE7243353B1005FDFCA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F903EE6243353B1005FDFCA /* NotificationService.swift */; };
 		2F903EEB243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F903EE4243353B1005FDFCA /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2F903EF62433A2AA005FDFCA /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2F903EF52433A2AA005FDFCA /* PartialSheet */; };
 		2FB3CFE12430C0E7005D75BC /* MultiLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE02430C0E7005D75BC /* MultiLineTextField.swift */; };
 		2FB3CFE32430C875005D75BC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE22430C875005D75BC /* Post.swift */; };
 		2FB3CFE52430C9BE005D75BC /* FirebasePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE42430C9BE005D75BC /* FirebasePosts.swift */; };
@@ -41,8 +40,6 @@
 		2FB3CFE9243121C7005D75BC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFE8243121C7005D75BC /* Comment.swift */; };
 		2FB3CFEB24315BA7005D75BC /* KeyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CFEA24315BA7005D75BC /* KeyboardResponsive.swift */; };
 		2FDA4568242CC84200FA314A /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA4567242CC84200FA314A /* Health.swift */; };
-		2FDA456A242CC85800FA314A /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA4569242CC85800FA314A /* Covid.swift */; };
-		2FDA456C242CC88B00FA314A /* FirebaseCovid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA456B242CC88B00FA314A /* FirebaseCovid.swift */; };
 		2FDA456E242CC8E000FA314A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA456D242CC8E000FA314A /* Extensions.swift */; };
 		2FDA4571242CC96700FA314A /* NewsBig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA4570242CC96700FA314A /* NewsBig.swift */; };
 		2FDA4573242CC98500FA314A /* NewsHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA4572242CC98500FA314A /* NewsHorizontal.swift */; };
@@ -146,8 +143,6 @@
 		2FB3CFE8243121C7005D75BC /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		2FB3CFEA24315BA7005D75BC /* KeyboardResponsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponsive.swift; sourceTree = "<group>"; };
 		2FDA4567242CC84200FA314A /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
-		2FDA4569242CC85800FA314A /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
-		2FDA456B242CC88B00FA314A /* FirebaseCovid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCovid.swift; sourceTree = "<group>"; };
 		2FDA456D242CC8E000FA314A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Extensions.swift; sourceTree = "<group>"; };
 		2FDA4570242CC96700FA314A /* NewsBig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBig.swift; sourceTree = "<group>"; };
 		2FDA4572242CC98500FA314A /* NewsHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHorizontal.swift; sourceTree = "<group>"; };
@@ -196,7 +191,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F903EF62433A2AA005FDFCA /* PartialSheet in Frameworks */,
 				683BFBE1D04E12C2953D5056 /* Pods_Evde_Kal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +286,6 @@
 				2F5C3DF6242509FF001A3293 /* FirebaseData.swift */,
 				2F5C3E07242512A2001A3293 /* HTTPManager.swift */,
 				2F5C3E09242512BF001A3293 /* API.swift */,
-				2FDA456B242CC88B00FA314A /* FirebaseCovid.swift */,
 				2FDA458D242CDD7900FA314A /* FirebaseFilms.swift */,
 				2FDA4594242CF13100FA314A /* FirebaseBooks.swift */,
 				2FDA45A2242D083200FA314A /* FirebaseSports.swift */,
@@ -312,7 +305,6 @@
 			children = (
 				2F5C3E0B2425132A001A3293 /* CoronaNews.swift */,
 				2FDA4567242CC84200FA314A /* Health.swift */,
-				2FDA4569242CC85800FA314A /* Covid.swift */,
 				2FDA458B242CDD2500FA314A /* Films.swift */,
 				2FDA4592242CF0FF00FA314A /* Books.swift */,
 				2FDA4596242D070400FA314A /* Sport.swift */,
@@ -433,7 +425,6 @@
 			);
 			name = "Evde Kal";
 			packageProductDependencies = (
-				2F903EF52433A2AA005FDFCA /* PartialSheet */,
 			);
 			productName = "Korona #EvdeKal";
 			productReference = 2F5C3DD324250840001A3293 /* Evde Kal.app */;
@@ -485,7 +476,6 @@
 			);
 			mainGroup = 2F5C3DCA24250840001A3293;
 			packageReferences = (
-				2F903EF42433A2AA005FDFCA /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = 2F5C3DD424250840001A3293 /* Products */;
 			projectDirPath = "";
@@ -600,7 +590,6 @@
 				2FDA4582242CCB8100FA314A /* NewsDetail.swift in Sources */,
 				2F6589142434C0D70097F928 /* Opportunities.swift in Sources */,
 				2FB3CFE9243121C7005D75BC /* Comment.swift in Sources */,
-				2FDA456A242CC85800FA314A /* Covid.swift in Sources */,
 				2F26973F242F71C500A261C7 /* WelcomeView.swift in Sources */,
 				2FDA458A242CDCDA00FA314A /* FilmList.swift in Sources */,
 				2FDA4577242CC9B400FA314A /* StepbyStep.swift in Sources */,
@@ -649,7 +638,6 @@
 				2FDA4579242CC9CD00FA314A /* NewsView.swift in Sources */,
 				2F269743242F989900A261C7 /* SendPost.swift in Sources */,
 				2FB3CFE32430C875005D75BC /* Post.swift in Sources */,
-				2FDA456C242CC88B00FA314A /* FirebaseCovid.swift in Sources */,
 				2F5C3E0E24251B2B001A3293 /* NewsVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +794,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Evde Kal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Korona #EvdeKal/Preview Content\"";
 				DEVELOPMENT_TEAM = 24G3237JT8;
 				ENABLE_PREVIEWS = YES;
@@ -830,6 +819,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Evde Kal.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Korona #EvdeKal/Preview Content\"";
 				DEVELOPMENT_TEAM = 24G3237JT8;
 				ENABLE_PREVIEWS = YES;
@@ -919,25 +909,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2F903EF42433A2AA005FDFCA /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2F903EF52433A2AA005FDFCA /* PartialSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F903EF42433A2AA005FDFCA /* XCRemoteSwiftPackageReference "PartialSheet" */;
-			productName = PartialSheet;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2F5C3DDA24250840001A3293 /* Korona__EvdeKal.xcdatamodeld */ = {

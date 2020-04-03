@@ -16,7 +16,7 @@ struct NewsDetail: View {
     var content:String = ""
     var image:String = ""
     var video:String = ""
-    var attr = NSAttributedString()
+    @State var attr = NSAttributedString()
     var imageShare = UIImageView()
     @State private var showShareSheet = false
     let screenWidth = UIScreen.main.bounds.width
@@ -28,9 +28,6 @@ struct NewsDetail: View {
         self.image = image
         self.video = video
         self.imageShare.downloaded(from: image)
-        
-        self.attr = String(format:self.formatString, content).convertHtml()
-        
     }
     
     var body: some View {
@@ -57,6 +54,11 @@ struct NewsDetail: View {
         }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(activityItems: [self.imageShare.image!, self.title])
+        }
+        .onAppear{
+            DispatchQueue.main.async {
+                self.attr = String(format:self.formatString, self.content).convertHtml()
+            }
         }
         .navigationBarTitle(Text(title), displayMode: .inline)
         .navigationBarItems(trailing:
